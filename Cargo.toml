@@ -1,0 +1,24 @@
+[package]
+name = "refresh"
+version = "0.1.0"
+edition = "2021"
+authors = ["Mauro Alexandre"]
+description = "A minimal, low-level, efficient, pipe-friendly CLI tool that periodically re-executes a command"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/developerdevice/refresh"
+keywords = ["cli", "unix", "watch", "refresh", "periodic"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+ctrlc = "3.4"
+shell-words = "1.1"
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.1"
+tempfile = "3.10"
+
+[[bin]]
+name = "refresh"
+path = "src/main.rs"
