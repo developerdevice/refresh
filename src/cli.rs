@@ -9,8 +9,8 @@ pub struct Cli {
     #[arg(value_name = "INTERVAL")]
     pub interval: u64,
 
-    /// Command to execute (use -- to separate command with arguments)
-    #[arg(value_name = "COMMAND", num_args = 0..)]
+    /// Command to execute (trailing arguments are treated as part of the command)
+    #[arg(value_name = "COMMAND", num_args = 0.., trailing_var_arg = true)]
     pub command: Vec<String>,
 
     /// Exit immediately if command returns non-zero exit code
